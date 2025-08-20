@@ -1,6 +1,7 @@
 package com.example.studyboot;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,10 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @Autowired
-    private TestService testService;
+    @Qualifier("sampleService")
+    private Service service;
 
     @GetMapping("/api/v1/test")
     public String test() {
-        return testService.getTest();
+        return service.getTest();
     }
 }
