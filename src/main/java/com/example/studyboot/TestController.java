@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @Autowired
-    @Qualifier("sampleService")
     private Service service;
 
     @GetMapping("/api/v1/test")
