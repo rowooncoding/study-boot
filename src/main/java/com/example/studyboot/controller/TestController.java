@@ -1,6 +1,7 @@
 package com.example.studyboot.controller;
 
 import com.example.studyboot.domain.Test;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,7 +20,7 @@ public class TestController {
     public String getTest3(
             @PathVariable Integer testId,
             @RequestParam String name,
-            @RequestBody Test test
+            @RequestBody @Valid Test test
             ) {
         return "test3";
     }
